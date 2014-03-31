@@ -13,6 +13,51 @@ public class IntArrayWorker
     matrix = theMatrix;
   }
   
+  public int getCount(int findMe)
+  {
+	 int foundCount = 0;
+	 
+	 for (int row = 0; row < matrix.length; row ++)
+	 {
+		 for (int col = 0; col < matrix[0].length; col ++)
+		 {
+			 if (matrix[row][col] == findMe)
+			 {
+				 foundCount ++;
+			 }
+		 }
+	 }
+	 
+	 return foundCount;
+  }
+  
+  public int getLargest()
+  { 
+	  int foundLargest = matrix[0][0];
+	  
+    for (int row = 0; row < matrix.length; row ++)
+    {
+    	for (int col = 0; col < matrix[0].length; col ++)
+    	{
+    		if (matrix[row][col] > foundLargest)
+    		{
+    			foundLargest = matrix[row][col];
+    		}
+    	}
+    }
+	  
+	  return foundLargest;
+  }
+  
+  public int getColTotal()
+  {
+	  int foundColTotal = matrix.length;
+	  
+	  	
+	  
+	  return foundColTotal;
+  }
+  
   /**
    * Method to return the total 
    * @return the total of the values in the array
@@ -24,7 +69,7 @@ public class IntArrayWorker
     {
       for (int col = 0; col < matrix[0].length; col++)
       {
-        total = total + matrix[row][col];
+        total +=  matrix[row][col];
       }
     }
     return total;
